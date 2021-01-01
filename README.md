@@ -1,4 +1,5 @@
-## Low-fi Music Player ##
+## Lofi Music Player ##
 #### Made with React ####
 
 Developed by Ed tutorial project
+Music from chillhop.com
