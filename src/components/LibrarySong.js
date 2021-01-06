@@ -1,12 +1,22 @@
 import React from 'react'
 
-const LibrarySong = ({song, songs, setCurrentSong, id}) => {
+const LibrarySong = ({song, songs, setCurrentSong, id, audioRef, isPlaying}) => {
 
     const songSelectHandler = () => {
         // the below is unnessisary as we alread have the song by passing song as a prop
         // const selectedSong = songs.filter((state) => state.id === id)
         // setCurrentSong(selectedSong[0])
         setCurrentSong(song)
+        //check if song is playing
+        if(isPlaying) {
+            const playPromise = audioRef.current.play()
+            if(playPromise !== undefined){
+                playPromise.then((audio)=> {
+                    audioRef.current.play()
+                })
+            }
+        }
+        
     }
 
     return (
